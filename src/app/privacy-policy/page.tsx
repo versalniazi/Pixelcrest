@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LegalPage } from "@/components/LegalPage";
 import { pageMetadata } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { registeredOfficeText, site } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Privacy Policy",
@@ -15,16 +15,17 @@ export default function PrivacyPolicyPage() {
     <LegalPage
       title="Privacy Policy"
       path="/privacy-policy"
-      updated="22 October 2026"
+      updated="29 October 2026"
       intro="This policy explains what personal data we collect when you use our website or contact us, how we use it, and the rights you have."
     >
       <h2>Who we are</h2>
       <p>
-        This website is operated by {site.name} (Companies House company number{" "}
+        This website is operated by {site.legalName}, a {site.companyType} registered in {site.registeredIn}{" "}
+        (company number{" "}
         <a href={site.companiesHouseUrl} target="_blank" rel="noopener noreferrer">
           {site.companyNumber}
         </a>
-        ). For the purposes of UK data protection law, including the UK General Data Protection Regulation (UK GDPR)
+        ), whose registered office is at {registeredOfficeText}. For the purposes of UK data protection law, including the UK General Data Protection Regulation (UK GDPR)
         and the Data Protection Act 2018, we are the controller of the personal data described in this policy.
       </p>
       <p>

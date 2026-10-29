@@ -65,7 +65,7 @@ export default function AboutPage() {
           </div>
           <div className="space-y-5 text-lg leading-relaxed text-navy-600">
             <p>
-              {site.name} is a UK-based digital marketing agency. We exist to make professional digital marketing
+              {site.name} ({site.legalName}) is a UK digital marketing agency, registered in {site.registeredIn}. We exist to make professional digital marketing
               accessible to businesses of every size, without confusing jargon, inflated retainers or unrealistic
               promises.
             </p>

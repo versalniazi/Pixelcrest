@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LegalPage } from "@/components/LegalPage";
 import { pageMetadata } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { registeredOfficeText, site } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Terms & Conditions",
@@ -15,16 +15,17 @@ export default function TermsPage() {
     <LegalPage
       title="Terms & Conditions"
       path="/terms-and-conditions"
-      updated="22 October 2026"
+      updated="29 October 2026"
       intro="These terms explain how our website may be used and the basis on which we provide our digital marketing packages and services."
     >
       <h2>1. About us</h2>
       <p>
-        This website is operated by {site.name} (Companies House company number{" "}
+        This website is operated by {site.legalName}, a {site.companyType} registered in {site.registeredIn}{" "}
+        (company number{" "}
         <a href={site.companiesHouseUrl} target="_blank" rel="noopener noreferrer">
           {site.companyNumber}
         </a>
-        ). You can contact us at <a href={`mailto:${site.email}`}>{site.email}</a> or on{" "}
+        ), whose registered office is at {registeredOfficeText}. You can contact us at <a href={`mailto:${site.email}`}>{site.email}</a> or on{" "}
         <a href={site.phoneHref}>{site.phoneDisplay}</a>.
       </p>
 
@@ -122,9 +123,9 @@ export default function TermsPage() {
 
       <h2>14. Governing law</h2>
       <p>
-        These terms are governed by the laws of the United Kingdom applicable to the part of the UK in which our company
-        is registered, and the courts of that jurisdiction will have jurisdiction over any disputes. If you are a consumer,
-        you may also bring proceedings in the part of the UK where you live.
+        These terms are governed by the laws of England and Wales, and the courts of England and Wales will have
+        jurisdiction over any disputes. If you are a consumer living in Scotland or Northern Ireland, you may also bring
+        proceedings in your local courts.
       </p>
     </LegalPage>
   );

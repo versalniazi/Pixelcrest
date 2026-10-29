@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { legalNav, serviceNav } from "@/lib/navigation";
-import { site } from "@/lib/site";
+import { companyDisclosure, site } from "@/lib/site";
 import { Icon } from "./Icon";
 import { Logo } from "./Logo";
 
@@ -100,9 +100,12 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-navy-400 md:flex-row md:items-center md:justify-between">
-          <p>
-            © {year} {site.name}. All rights reserved.
-          </p>
+          <div className="max-w-2xl space-y-1">
+            <p>
+              © {year} {site.legalName}. All rights reserved.
+            </p>
+            <p className="text-xs leading-relaxed">{companyDisclosure}</p>
+          </div>
           <nav aria-label="Legal">
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
               {legalNav.map((l) => (

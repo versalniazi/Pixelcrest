@@ -4,7 +4,7 @@ import { Icon } from "@/components/Icon";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { organizationId, pageMetadata } from "@/lib/seo";
-import { absoluteUrl, mailto, site } from "@/lib/site";
+import { absoluteUrl, mailto, registeredOfficeText, site } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Contact Us | Get a Quote or Free Consultation",
@@ -69,6 +69,22 @@ export default function ContactPage() {
                   </a>
                 </li>
               </ul>
+              <div className="mt-6 border-t border-navy-100 pt-5 text-sm leading-relaxed text-navy-600">
+                <p className="font-semibold text-navy-950">{site.legalName}</p>
+                <p>
+                  Registered in {site.registeredIn}, company number{" "}
+                  <a
+                    href={site.companiesHouseUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-brand-600 underline underline-offset-2"
+                  >
+                    {site.companyNumber}
+                    <span className="sr-only"> (opens Companies House in a new tab)</span>
+                  </a>
+                </p>
+                <p>Registered office: {registeredOfficeText}</p>
+              </div>
             </div>
 
             <div className="rounded-2xl bg-navy-950 p-7 text-white">
